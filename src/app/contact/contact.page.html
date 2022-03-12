@@ -1,0 +1,54 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Contact page for, {{ title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Welcome, we are glad to help you</ion-card-title>
+      </ion-card-header>
+      <ion-img style="width: 380px; height: 280px;"
+        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80"
+      >
+      </ion-img>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-header [translucent]="true">
+          <ion-toolbar>
+            <ion-label>
+              <h2>Pick a date for a meeting</h2>
+            </ion-label>
+          </ion-toolbar>
+        </ion-header>
+        <ion-col size="col-md-8">
+          <ion-button fill="outline" color="primary" (click)="selectToday()">Select Today</ion-button>
+          <ion-button fill="outline" color="primary" (click)="dp.navigateTo()">To current month</ion-button>
+          <ion-button fill="outline" color="primary" (click)="dp.navigateTo({year: 2022, month: 7})">My off month</ion-button>
+          <p>Simple datepicker</p>
+          <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+        </ion-col>
+        <ion-col size="col-md-4" class="ion-padding">
+          <pre>Month: {{ date.month }}/{{ date.year }}</pre>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+
+    <ion-button href="{{ url }}" shape="round">See more</ion-button>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pepe the Kek</ion-card-title>
+        <ion-card-subtitle>The legend of Pepe</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{ cardContent }}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</ion-app>

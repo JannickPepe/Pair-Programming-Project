@@ -1,0 +1,7 @@
+{
+  "name": "pairprogramming",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
